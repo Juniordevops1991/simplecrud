@@ -14,5 +14,10 @@ use App\Http\Controllers\ViewController;
 |
 */
 
-Route::get("/", [ViewController::class, "index"]);
+Route::get("/", [ViewController::class, "index"])->name('index');
+Route::get("viewadd", [ViewController::class, "addform"])->name('addform');
+Route::post("add", [ViewController::class, "add"])->name('add.data');
+Route::get("/viewedit/{id}", [ViewController::class, "editform"])->name('editform');
+Route::post("edit/{id}", [ViewController::class, "edit"])->name('edit.data');
+Route::get("delete/{id}", [ViewController::class, "del"])->name('delete.data');
 
